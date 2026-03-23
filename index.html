@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Profile</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    background: #05080a;
+    color: #e6f1f2;
+}
+
+/* HERO */
+header {
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+}
+
+.hero-title {
+    font-size: 60px;
+    font-weight: 800;
+    background: linear-gradient(90deg, #00e6e6, #00b3b3, #66ffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+    font-size: 20px;
+    color: #9fdede;
+    max-width: 700px;
+    margin: 20px auto;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 25px;
+    background: #00e6e6;
+    color: #021414;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* NAV */
+nav {
+    background: #021414;
+    padding: 12px;
+    text-align: center;
+    border-bottom: 2px solid #00b3b3;
+    position: sticky;
+    top: 0;
+}
+
+nav a {
+    color: #cceeee;
+    margin: 0 20px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+nav a.active, nav a:hover {
+    color: #00ffff;
+    border-bottom: 2px solid #00ffff;
+}
+
+/* GENERAL */
+.container { width: 85%; margin: auto; }
+
+section {
+    background: #0a1a1a;
+    padding: 25px;
+    margin: 20px 0;
+    border-radius: 15px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.6s;
+}
+
+section.visible { opacity: 1; transform: translateY(0); }
+
+h2 { color: #00e6e6; margin-bottom: 10px; }
+
+/* ABOUT */
+.about-text {
+    max-width: 800px;
+    margin: auto;
+    line-height: 1.9;
+    text-align: justify;
+    font-size: 17px;
+}
+
+.profile-pic {
+    display: block;
+    margin: 20px auto;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 4px solid #00e6e6;
+    object-fit: cover;
+}
+
+/* SKILLS */
+.skill { margin-bottom: 15px; }
+.bar { background:#003333; border-radius:10px; overflow:hidden; }
+.bar span { display:block; height:8px; background:#00e6e6; }
+
+/* HOBBIES */
+.games-title {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 800;
+    margin-bottom: 30px;
+    background: linear-gradient(90deg, #00e6e6, #66ffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.games-carousel {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* CARD */
+.game-card {
+    width: 220px;
+    height: 320px;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    background: #000;
+}
+
+/* IMAGE CONTAINER */
+.card-slider {
+    width: 100%;
+    height: 100%;
+}
+
+/* FIXED IMAGE FIT */
+.card-slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* keeps image filling nicely */
+    display: block;
+}
+
+/* ARROWS */
+.card-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    padding: 0 8px;
+    z-index: 2;
+}
+
+.card-nav button {
+    background: rgba(0,0,0,0.5);
+    border: none;
+    color: #00e6e6;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 5px 8px;
+    border-radius: 5px;
+}
+
+/* OVERLAY */
+.overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.85));
+}
+
+.overlay h3 { color: #fff; }
+.overlay p { color: #00e6e6; font-size: 12px; }
+
+/* FOOTER */
+footer { text-align:center; padding:15px; }
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1 class="hero-title">Hi, I'm Adin!</h1>
+<p class="hero-subtitle">Computer Engineering Student | Aspiring Front-End Developer</p>
+<a href="#contact" class="btn">Contact Me</a>
+</header>
+
+<nav>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#hobbies">Hobbies</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<div class="container">
+
+<section id="about">
+<h2>About Me</h2>
+<img src="images/profile.png" class="profile-pic">
+<p class="about-text">
+I am Quer Aldrene M. Yanga, and I live in Sampaloc, Tanay, Rizal. I am a Computer Engineering student at the University of Rizal System – Morong Campus. I am an aspiring web developer with a strong interest in front-end development, while also aiming to become a full-stack developer in the future. I am fascinated by how web interfaces are designed and how interactive elements function.
+
+</p>
+</section>
+
+<section id="skills">
+<h2>Skills</h2>
+<div class="skill"><p>HTML & CSS</p><div class="bar"><span style="width:80%"></span></div></div>
+<div class="skill"><p>Python Programming</p><div class="bar"><span style="width:70%"></span></div></div>
+<div class="skill"><p>AutoCAD</p><div class="bar"><span style="width:60%"></span></div></div>
+<div class="skill"><p>Problem Solving</p><div class="bar"><span style="width:75%"></span></div></div>
+</section>
+
+<section id="hobbies">
+<h2 class="games-title">My Hobbies</h2>
+
+<div class="games-carousel">
+
+<div class="game-card">
+<div class="card-slider">
+<img id="img-1" src="images/watching.jpg">
+</div>
+<div class="card-nav">
+<button onclick="changeImage(1,-1)">‹</button>
+<button onclick="changeImage(1,1)">›</button>
+</div>
+<div class="overlay">
+<h3>Watching Shows</h3>
+<p>Entertainment</p>
+</div>
+</div>
+
+<div class="game-card">
+<div class="card-slider">
+<img id="img-2" src="images/gaming.jpg">
+</div>
+<div class="card-nav">
+<button onclick="changeImage(2,-1)">‹</button>
+<button onclick="changeImage(2,1)">›</button>
+</div>
+<div class="overlay">
+<h3>Gaming</h3>
+<p>Competitive</p>
+</div>
+</div>
+
+<div class="game-card">
+<div class="card-slider">
+<img id="img-3" src="images/music.jpg">
+</div>
+<div class="card-nav">
+<button onclick="changeImage(3,-1)">‹</button>
+<button onclick="changeImage(3,1)">›</button>
+</div>
+<div class="overlay">
+<h3>Music</h3>
+<p>Relaxation</p>
+</div>
+</div>
+
+<div class="game-card">
+<div class="card-slider">
+<img id="img-4" src="images/sports.jpg">
+</div>
+<div class="card-nav">
+<button onclick="changeImage(4,-1)">‹</button>
+<button onclick="changeImage(4,1)">›</button>
+</div>
+<div class="overlay">
+<h3>Sports</h3>
+<p>Professional</p>
+</div>
+</div>
+
+</div>
+</section>
+
+<section id="contact">
+<h2>Contact</h2>
+<p>Email: queraldreneyanga@gmail.com</p>
+<p>Facebook: www.facebook.com/queraldrene.yanga</p>
+</section>
+
+</div>
+
+<footer>
+<p>© 2026 damn right</p>
+</footer>
+
+<script>
+const cardImages = {
+1: ["images/watching.jpg","images/watching1.jpg","images/watching2.jpg","images/watching3.jpg","images/watching4.jpg","images/watching5.jpg","images/watching6.jpg"],
+2: ["images/gaming.jpg","images/gaming1.jpg","images/gaming2.jpg","images/gaming3.jpg"],
+3: ["images/music.jpg","images/music1.jpg","images/music2.jpg","images/music3.jpg","images/music4.jpg","images/music5.jpg","images/music6.jpg"],
+4: ["images/sports.jpg","images/sports1.jpg","images/sports2.jpg","images/sports3.jpg"]
+};
+
+let currentIndex = {1:0,2:0,3:0,4:0};
+
+function changeImage(cardId, direction){
+const images = cardImages[cardId];
+currentIndex[cardId] += direction;
+
+if(currentIndex[cardId] < 0){
+currentIndex[cardId] = images.length - 1;
+}
+if(currentIndex[cardId] >= images.length){
+currentIndex[cardId] = 0;
+}
+
+document.getElementById("img-" + cardId).src = images[currentIndex[cardId]];
+}
+
+// scroll animation
+const sections=document.querySelectorAll('section');
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting) entry.target.classList.add('visible');
+});
+},{threshold:0.2});
+sections.forEach(s=>observer.observe(s));
+
+// navbar active
+const navLinks=document.querySelectorAll("nav a");
+window.addEventListener("scroll",()=>{
+let current="";
+document.querySelectorAll("section").forEach(sec=>{
+if(scrollY>=sec.offsetTop-100){current=sec.id}
+});
+navLinks.forEach(a=>{
+a.classList.remove("active");
+if(a.getAttribute("href")==="#"+current){a.classList.add("active")}
+});
+});
+</script>
+
+</body>
+</html>
